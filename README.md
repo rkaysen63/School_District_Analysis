@@ -1,5 +1,8 @@
 # School_District_Analysis
-<img src="ScreenShots/Adjusted_School_Summary.png" width="400" height="288">
+<p align="center">
+  <img src="ScreenShots/Adjusted_School_Summary.png" width="600" height="433">
+</p>
+
 
 ## Table of Contents
 * [Overview of Project](https://github.com/rkaysen63/School_District_Analysis/blob/master/README.md#overview-of-project)
@@ -20,7 +23,7 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
 * Software: Python 3.7.9 in Jupyter Notebook interface
 * Lesson Plan: UTA-VIRT-DATA-PT-02-2021-U-B-TTH, Module 4 Challenge
 * Readme Markdown Help:
-  * Reference resizing images: https://gist.github.com/MichaelPolla/a65ac84286ab523603e64549f985022
+  * Reference resizing images: https://gist.github.com/DavidWells/7d2e0e1bc78f4ac59a123ddf8b74932d
 
 ## Results
 Results: Using bulleted lists and images of DataFrames as support, address the following questions.
