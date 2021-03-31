@@ -34,21 +34,23 @@ Results: Using bulleted lists and images of DataFrames as support, address the f
   <p align="center">
   <img src="ScreenShots/District_Summary_Comparison.png" width="900">
   </p>
-  The image above shows a comparison of the `district_summary` dataframe after Thomas High School's (THS) 9th grade math and reading scores were removed compared to the `district_summary` of the original analysis.  There was essentially no impact.  Only a difference of 0.1 is seen in the Average Math Score for the district.  It is not a surprise that the removal of THS's 9th grade scores had so little impact on the overal district scores because the THS's 9th grade class (641 students) is only 1.6 % of the district's total student population of 39169.
+  The image above shows a comparison of the District Summary, i.e `district_summary_df` dataframe, after Thomas High School's (THS) 9th grade math and reading scores were removed to the `district_summary_df` of the original analysis.  The effect is so small as to be considered negligible.  Only a difference of 0.1 is seen in the Average Math Score for the district.  It is not a surprise that the removal of THS's 9th grade scores had so little impact on the overall district scores because the THS's 9th grade class (641 students) is only 1.6 % of the district's total student population of 39169.
 
-* ### School Summary    How is the school summary affected?
-* <p align="center">
+* ### School Summary 
+  <p align="center">
   <img src="ScreenShots/School_Summary_Comparison.png" width="900">
   </p>
-* How does replacing the ninth graders’ math and reading scores affect Thomas High School’s performance relative to the other schools?
+  Since the School Summary, i.e. `per_school_summary_df`, displays the results by each school in the district, only the results of THS were affected by removing THS's 9th grade math and reading scores.  Compare the lines that are highlighted in gold.  The lower dataframe is from the original analysis.  The upper dataframe is the refactored analysis that excludes THS's ninth graders' math and reading scores. THS's average math score went down < 0.1 points and their average reading score went up < 0.1 points by removing their 9th graders' scores.  The effect is so small as to be considered negligible.
+  
+* Because the effect of replacing the ninth graders' math and reading scores with NaN is negligible, Thomas High School's performance relative to the other schools did not change.
 
-* School District requested the results of the top five and bottom five performing schools. 
+* ### Top Five and Bottom Five Performing Schools
 * <p align="center">
   <img src="ScreenShots/Top_Schools_Comparison.png" width="900">
   </p> 
   Low performing schools
   <p align="center">
-  <img src="ScreenShots/Adjusted_Low_Performing_Schools.png" width="900">
+  <img src="ScreenShots/Low_Performing_Schools.png" width="900">
   </p> 
 * How does replacing the ninth-grade scores affect the following:
 * Math and reading scores by grade
