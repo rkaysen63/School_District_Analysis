@@ -30,13 +30,13 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
 ## Results
 Results: Using bulleted lists and images of DataFrames as support, address the following questions.
 
-* District Summary 
+* ### District Summary 
   <p align="center">
   <img src="ScreenShots/District_Summary_Comparison.png" width="900">
   </p>
-  The image above shows a comparison of the `district_summary` dataframe after Thomas High School's (THS) 9th grade math and reading scores were removed compared to the `district_summary` of the original analysis.  There was neglible impact.  Only a difference of 0.1 is seen in the Average Math Score for the district.  It is not a surprise that the removal of THS's 9th grade scores had so little impact on the overal district scores because the class size (641 students) is only 1.6 % of the district's total student population of 39169.
+  The image above shows a comparison of the `district_summary` dataframe after Thomas High School's (THS) 9th grade math and reading scores were removed compared to the `district_summary` of the original analysis.  There was essentially no impact.  Only a difference of 0.1 is seen in the Average Math Score for the district.  It is not a surprise that the removal of THS's 9th grade scores had so little impact on the overal district scores because the THS's 9th grade class (641 students) is only 1.6 % of the district's total student population of 39169.
 
-* How is the school summary affected?
+* ### School Summary    How is the school summary affected?
 * <p align="center">
   <img src="ScreenShots/School_Summary_Comparison.png" width="900">
   </p>
