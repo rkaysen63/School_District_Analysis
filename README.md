@@ -34,13 +34,13 @@ Results: Using bulleted lists and images of DataFrames as support, address the f
   <p align="center">
   <img src="ScreenShots/District_Summary_Comparison.png" width="900">
   </p>
-  The image above shows a comparison of the District Summary, i.e `district_summary_df` dataframe, after Thomas High School's (THS) ninth grade math and reading scores were removed to the `district_summary_df` of the original analysis.  The effect is so small as to be considered negligible.  Only a difference of 0.1 is seen in the Average Math Score for the district.  It is not a surprise that the removal of THS's ninth grade scores had so little impact on the overall district scores because the THS's ninth grade class (641 students) is only 1.6 % of the district's total student population of 39169.
+  The image above shows a comparison of the *District Summary*, i.e `district_summary_df` dataframe, after Thomas High School's (THS) ninth grade math and reading scores were removed to the `district_summary_df` of the original analysis.  The effect is so small as to be considered negligible.  Only a difference of 0.1 points is seen in the Average Math Score for the district.  It is not a surprise that the removal of THS's ninth grade scores had so little impact on the overall district scores because the THS's ninth grade class of 641 students is only 1.6 % of the district's total student population of 39169.
 
 * ### School Summary 
   <p align="center">
   <img src="ScreenShots/School_Summary_Comparison.png" width="900">
   </p>
-  Since the School Summary, i.e. `per_school_summary_df`, displays the results by each school in the district, only the results of THS were affected by removing THS's ninth grade math and reading scores.  Compare the lines that are highlighted in gold.  The lower dataframe is from the original analysis.  The upper dataframe is the refactored analysis that excludes THS's ninth graders' math and reading scores. THS's average math score went down < 0.1 points and their average reading score went up < 0.1 points by removing their ninth graders' scores.  The effect is so small as to be considered negligible.
+  Since the *School Summary*, i.e. `per_school_summary_df`, displays the results by each school in the district, only the results of THS were affected by removing THS's ninth grade math and reading scores.  Compare the lines that are highlighted in gold.  The lower dataframe is from the original analysis.  The upper dataframe is the refactored analysis that excludes THS's ninth graders' math and reading scores. THS's average math score went down < 0.1 points and their average reading score went up < 0.1 points by removing their ninth graders' scores.  The effect is so small as to be considered negligible.
   
 * Because the effect of replacing the ninth graders' math and reading scores with NaN is negligible, Thomas High School's performance relative to the other schools did not change.
 
@@ -48,7 +48,7 @@ Results: Using bulleted lists and images of DataFrames as support, address the f
   <p align="center">
   <img src="ScreenShots/Top_Schools_Comparison.png" width="900">
   </p> 
-  The highest performing schools are shown above.  Since Thomas High School (THS) is included in the top 5, the top five schools was shown twice to demonstrate that THS's rank in the top five did not change as a result of removing its ninth grade math and reading scores from the data.
+  The highest performing schools are shown above.  Since Thomas High School (THS), highlighted in gold in both dataframes, is included in the top 5, the top five schools was shown twice to demonstrate that THS's rank in the top five did not change as a result of removing its ninth grade math and reading scores from the data.
   
 * ### Bottom Five Performing Schools
   <p align="center">
@@ -60,24 +60,25 @@ Results: Using bulleted lists and images of DataFrames as support, address the f
   <p align="center">
   <img src="ScreenShots/Math_Read_Grade_Comparison.png" width="800">
   </p> 
-  The comparison above of the original math and reading scores by grade to the math and reading scores by grade after the THS ninth graders' math and reading scores were removed show that the ninth graders' grades appear as NaN, i.e. a null value, in the subsequent dataframe.
+  The comparison above of the original *Math and Reading Scores by Grade* to the *Math and Reading Scores by Grade* after the THS ninth graders' math and reading scores were removed show that the ninth graders' grades appear as NaN, i.e. a null value, in the subsequent dataframe.
 
 * ### Scores by School Spending Per Capita
 * <p align="center">
   <img src="ScreenShots/Scores_by_Spending_per_Capita_Comparison.png" width="800">
   </p> 
-  The comparison above of the original Scores by Spending Ranges (Per Student) to the revised Scores by Spending Ranges (Per Student) after THS ninth grader's math and reading scores were removed show that the ninth graders' grades appear as NaN, i.e. a null value, in the subsequent dataframe.<b>
+  The comparison above of the original *Scores by Spending Ranges (Per Student)* to the revised *Scores by Spending Ranges (Per Student)* after THS ninth graders' math and reading scores were removed shows no difference in the results.  The dataframe, `scores_by_school_spending_df`, shows that regardless of the amount spent on each student, reading averages are about the same across the spending ranges, but the math scores actually decreased slightly for schools that spent more money per student.
 
-* Scores by school size
+* ### Scores by School Size
   <p align="center">
   <img src="ScreenShots/Scores_School_Size_Comparison.png" width="800">
   </p> 
-
-* Scores by school type
+  The comparison above of the original *Scores by School Size* to the revised *Scores by School Size* after THS ninth grader's math and reading scores were removed show no difference in the results.  The dataframe, `scores_by_size_df`, shows that math and reading averages are about the same for small and medium schools, but the math and reading scores decreased for larger schools.
+  
+* ### Scores by School Type
   <p align="center">
   <img src="ScreenShots/Scores_School_Type_Comparison.png" width="800">
   </p> 
-
+  The comparison above of the original *Scores by School Type* to the revised *Scores by School Type* after THS ninth grader's math and reading scores were removed show no difference in the results.  The dataframe, `scores_by_type_df`, shows that Charter Schools perform slightly better than District Schools in both math and reading.
 
 ## Summary
 Summarize four major changes in the updated school district analysis after reading and math scores for the ninth grade at Thomas High School have been replaced with NaNs.
