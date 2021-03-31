@@ -1,6 +1,6 @@
 # School_District_Analysis
 <p align="center">
-  <img src="ScreenShots/Adjusted_School_Summary.png" width="600" height="433">
+  <img src="ScreenShots/Student_Data_Comparison.PNG" width="600" height="433">
 </p>
 
 
@@ -29,14 +29,48 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
 Results: Using bulleted lists and images of DataFrames as support, address the following questions.
 
 * How is the district summary affected? 
+* <p align="center">
+  <img src="ScreenShots/District_Summary_Comparison.png" ">
+  </p>
 * How is the school summary affected?
+* <p align="center">
+  <img src="ScreenShots/School_Summary_Comparison.png" ">
+  </p>
 * How does replacing the ninth graders’ math and reading scores affect Thomas High School’s performance relative to the other schools?
-* School District requested the results of the top five and bottom five performing schools.  
+
+* School District requested the results of the top five and bottom five performing schools. 
+* <p align="center">
+  <img src="ScreenShots/Top_Schools_Comparison.png">
+  </p> 
+  Low performing schools
+  <p align="center">
+  <img src="ScreenShots/Original_Low_Performing_Schools.png">
+  </p> 
 * How does replacing the ninth-grade scores affect the following:
 * Math and reading scores by grade
+  <p align="center">
+  <img src="ScreenShots/Math_Read_Grade_Comparison.png">
+  </p> 
+
 * Scores by school spending
+* <p align="center">
+  <img src="SScreenShots/Scores_by_Spending_per_Capita_Comparison.png">
+  </p> 
+  
 * Scores by school size
+  <p align="center">
+  <img src="ScreenShots/Scores_School_Size_Comparison.png">
+  </p> 
+
 * Scores by school type
+*   <p align="center">
+  <img src="ScreenShots/Scores_School_Type_Comparison.png"| width=600>
+  </p> 
 
 ## Summary
 Summarize four major changes in the updated school district analysis after reading and math scores for the ninth grade at Thomas High School have been replaced with NaNs.
+1. Replace student grades for ths 9th graders with nan
+2. Recalculate passing % w clean data, i.e. ths 9th gr removed.
+3. Create a dataframe of all students from ths passing math, again passing reading, again passing both
+4. Using dataframes above get % from ths 10-12. replace math, reading, overall % in school summary for ths
+5. Calculate the number of THS students 10-12th
