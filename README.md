@@ -44,7 +44,7 @@ Results: Using bulleted lists and images of DataFrames as support, address the f
   </p> 
   Low performing schools
   <p align="center">
-  <img src="ScreenShots/Original_Low_Performing_Schools.png" width="900">
+  <img src="ScreenShots/Adjusted_Low_Performing_Schools.png" width="900">
   </p> 
 * How does replacing the ninth-grade scores affect the following:
 * Math and reading scores by grade
