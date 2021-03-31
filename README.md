@@ -1,6 +1,6 @@
 # School_District_Analysis
 <p align="center">
-  <img src="ScreenShots/Student_Data_Comparison.PNG" width="600" height="433">
+  <img src="ScreenShots/Student_Data_Comparison.PNG" width="700">
 </p>
 
 
@@ -40,11 +40,11 @@ Results: Using bulleted lists and images of DataFrames as support, address the f
 
 * School District requested the results of the top five and bottom five performing schools. 
 * <p align="center">
-  <img src="ScreenShots/Top_Schools_Comparison.png" width="800">
+  <img src="ScreenShots/Top_Schools_Comparison.png" width="900">
   </p> 
   Low performing schools
   <p align="center">
-  <img src="ScreenShots/Original_Low_Performing_Schools.png" width="800">
+  <img src="ScreenShots/Original_Low_Performing_Schools.png" width="900">
   </p> 
 * How does replacing the ninth-grade scores affect the following:
 * Math and reading scores by grade
