@@ -11,7 +11,9 @@
 * [Summary](https://github.com/rkaysen63/School_District_Analysis/blob/master/README.md#summary)
 
 ## Overview of Project
-School District has requested help with analyzing district and student data to determine the top and bottom performing schools in the district and to see if school spending per capita, school size, or school type have any type of relationship to school performance.  After the initial data was analyzed, it was discovered that math and reading scores from the 9th grade class of Thomas High School (THS) had to be removed from the data set because of evidence of academic dishonesty and the data re-analyzed.  
+City School System has requested help with analyzing district and student data to determine the top and bottom performing schools in the district and to see if school spending per capita, school size, or school type have any type of relationship to school performance.  After the initial data was analyzed, it was discovered that math and reading scores from the 9th grade class of Thomas High School (THS) had to be removed from the data set because of evidence of academic dishonesty and the data re-analyzed.  
+
+The opening image compares the original `student_data_df`, lower dataframe, to the refactored `student_data_df`, upper dataframe, where the 9th grade math and reading scores for THS were replaced with "NaN".  
 
 Python through Jupyter Notebook interface was used to pull in and analyze data from two sources referenced below.
 
@@ -28,10 +30,12 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
 ## Results
 Results: Using bulleted lists and images of DataFrames as support, address the following questions.
 
-* How is the district summary affected? 
-* <p align="center">
+* District Summary 
+  <p align="center">
   <img src="ScreenShots/District_Summary_Comparison.png" width="900">
   </p>
+  The image above shows a comparison of the `district_summary` dataframe after Thomas High School's (THS) 9th grade math and reading scores were removed compared to the `district_summary` of the original analysis.  There was neglible impact.  Only a difference of 0.1 is seen in the Average Math Score for the district.  It is not a surprise that the removal of THS's 9th grade scores had so little impact on the overal district scores because the class size (641 students) is only 1.6 % of the district's total student population of 39169.
+
 * How is the school summary affected?
 * <p align="center">
   <img src="ScreenShots/School_Summary_Comparison.png" width="900">
