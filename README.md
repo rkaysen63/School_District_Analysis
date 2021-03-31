@@ -45,26 +45,29 @@ Results: Using bulleted lists and images of DataFrames as support, address the f
 * Because the effect of replacing the ninth graders' math and reading scores with NaN is negligible, Thomas High School's performance relative to the other schools did not change.
 
 * ### Top Five Performing Schools
-* <p align="center">
+  <p align="center">
   <img src="ScreenShots/Top_Schools_Comparison.png" width="900">
   </p> 
-  The highest performing schools are shown above.  Since Thomas High School (THS) is included in the top 5, the top five was shown twice to demonstrate that THS's rank in the top five did not change as a result of removing its ninth grade math and reading scores from the data.
+  The highest performing schools are shown above.  Since Thomas High School (THS) is included in the top 5, the top five schools was shown twice to demonstrate that THS's rank in the top five did not change as a result of removing its ninth grade math and reading scores from the data.
   
-* ### Low performing schools
+* ### Bottom Five Performing Schools
   <p align="center">
   <img src="ScreenShots/Low_Performing_Schools.png" width="900">
   </p> 
-* How does replacing the ninth-grade scores affect the following:
-* Math and reading scores by grade
+  The lowest performing schools are shown above. This dataframe is shown only one time because Thomas High School does not fall in this category before or after removing the ninth graders' math and reading scores.
+  
+* ### Math and Reading Scores by Grade
   <p align="center">
   <img src="ScreenShots/Math_Read_Grade_Comparison.png" width="800">
   </p> 
+  The comparison above of the original math and reading scores by grade to the math and reading scores by grade after the THS ninth graders' math and reading scores were removed show that the ninth graders' grades appear as NaN, i.e. a null value, in the subsequent dataframe.
 
-* Scores by school spending
+* ### Scores by School Spending Per Capita
 * <p align="center">
-  <img src="SScreenShots/Scores_by_Spending_per_Capita_Comparison.png" width="800">
+  <img src="ScreenShots/Scores_by_Spending_per_Capita_Comparison.png" width="800">
   </p> 
-  
+  The comparison above of the original Scores by Spending Ranges (Per Student) to the revised Scores by Spending Ranges (Per Student) after THS ninth grader's math and reading scores were removed show that the ninth graders' grades appear as NaN, i.e. a null value, in the subsequent dataframe.<b>
+
 * Scores by school size
   <p align="center">
   <img src="ScreenShots/Scores_School_Size_Comparison.png" width="800">
