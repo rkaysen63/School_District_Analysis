@@ -30,42 +30,43 @@ Results: Using bulleted lists and images of DataFrames as support, address the f
 
 * How is the district summary affected? 
 * <p align="center">
-  <img src="ScreenShots/District_Summary_Comparison.png" ">
+  <img src="ScreenShots/District_Summary_Comparison.png" width="900">
   </p>
 * How is the school summary affected?
 * <p align="center">
-  <img src="ScreenShots/School_Summary_Comparison.png" ">
+  <img src="ScreenShots/School_Summary_Comparison.png" width="900">
   </p>
 * How does replacing the ninth graders’ math and reading scores affect Thomas High School’s performance relative to the other schools?
 
 * School District requested the results of the top five and bottom five performing schools. 
 * <p align="center">
-  <img src="ScreenShots/Top_Schools_Comparison.png">
+  <img src="ScreenShots/Top_Schools_Comparison.png" width="800">
   </p> 
   Low performing schools
   <p align="center">
-  <img src="ScreenShots/Original_Low_Performing_Schools.png">
+  <img src="ScreenShots/Original_Low_Performing_Schools.png" width="800">
   </p> 
 * How does replacing the ninth-grade scores affect the following:
 * Math and reading scores by grade
   <p align="center">
-  <img src="ScreenShots/Math_Read_Grade_Comparison.png">
+  <img src="ScreenShots/Math_Read_Grade_Comparison.png" width="800">
   </p> 
 
 * Scores by school spending
 * <p align="center">
-  <img src="SScreenShots/Scores_by_Spending_per_Capita_Comparison.png">
+  <img src="SScreenShots/Scores_by_Spending_per_Capita_Comparison.png" width="800">
   </p> 
   
 * Scores by school size
   <p align="center">
-  <img src="ScreenShots/Scores_School_Size_Comparison.png">
+  <img src="ScreenShots/Scores_School_Size_Comparison.png" width="800">
   </p> 
 
 * Scores by school type
-*   <p align="center">
-  <img src="ScreenShots/Scores_School_Type_Comparison.png"| width=600>
+  <p align="center">
+  <img src="ScreenShots/Scores_School_Type_Comparison.png" width="800">
   </p> 
+
 
 ## Summary
 Summarize four major changes in the updated school district analysis after reading and math scores for the ninth grade at Thomas High School have been replaced with NaNs.
