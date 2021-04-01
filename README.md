@@ -28,7 +28,6 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   * Reference resizing images: https://gist.github.com/DavidWells/7d2e0e1bc78f4ac59a123ddf8b74932d
 
 ## Results
-Results: Using bulleted lists and images of DataFrames as support, address the following questions.
 
 * ### District Summary 
   <p align="center">
@@ -81,9 +80,20 @@ Results: Using bulleted lists and images of DataFrames as support, address the f
   The comparison above of the original *Scores by School Type* to the revised *Scores by School Type* after THS ninth grader's math and reading scores were removed show no difference in the results.  The dataframe, `scores_by_type_df`, shows that Charter Schools perform slightly better than District Schools in both math and reading.
 
 ## Summary
-Summarize four major changes in the updated school district analysis after reading and math scores for the ninth grade at Thomas High School have been replaced with NaNs.
-1. Replace student grades for ths ninth graders with nan
-2. Recalculate passing % w clean data, i.e. ths ninth gr removed.
-3. Create a dataframe of all students from ths passing math, again passing reading, again passing both
-4. Using dataframes above get % from ths 10-12. replace math, reading, overall % in school summary for ths
+In order to provide a fair comparison across district schools, Thomas High School's ninth grade math and reading scores were removed from the student data dataframe, `student_data_df`, and replaced with null, i.e. NaN.  The revised `student_data_df` was merged with the `school_data_df` to form a new, "clean" `school_data_complete_df` that includes null (NaN) values for THS's ninth graders' math and reading scores.
+
+Because THS's ninth graders math and reading scores were removed several changes had to be implemented to the original code to create the results.
+
+1. In creating the District Summary, `district_summary_df`, the average math and reading scores are calculated from the "clean" `school_data_complete_df`, so that the mean of math and reading scores no longer include THS's ninth graders' scores because they are NaN. <b> ` average_math_score = school_data_complete_df["math_score"].mean()` <b> 
+   * In order to calculate the passing math, reading and overall percentages, the total student count had to be revised to exclude THS ninth graders.  The ninth grade count was obtained using the .loc method and subtracting the total student count. <b>
+  `ths_9th_gr_count = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "Student ID"].count()` <b>
+  `student_count = school_data_complete_df["Student ID"].count()` <b>
+  `student_count_wo_ths9th = student_count - ths_9th_gr_count` <b>
+  Passing rates were from the "clean" `school_data_complete_df`, the same way as before by identifying that we want only want math, or reading, or both scores from the dataframe that are greater than or equal to 70. The overall passing math and reading is shown below to illustrate.  <b> 
+  `passing_math_reading = school_data_complete_df[(school_data_complete_df["math_score"] >= 70) & (school_data_complete_df["reading_score"] >= 70)]` <b> `overall_passing_math_reading_count = passing_math_reading["student_name"].count()` <b> `overall_passing_percentage = overall_passing_math_reading_count/float(student_count_wo_ths9th) * 100`
+
+2. The procedure for creating the School Summary, `school_summary_df` without THS's ninth graders' math and reading scores, began exactly the same as before, except after it was created the tenth through twelfth grade passing percentages were calculated separately and inserted into the dataframe to replace the percentages that were calculated using the entire student population to create a "clean" `school_summary_df`.  As before, number of Series were created using the `df.groupby()` function, `per_school_budget = school_data_complete_dff.groupby()["school_name"].mean()["budget"]`, to calculate the mean for budget, math and reading and filtered dataframes were created for passing math and reading scores using.  The average math and reading scores for THS will reflect that the ninth graders' scores are NaN.  But the percentages will not be correct because the school count was not adjusted to omit the ninth graders from the count.  In order to record the correct passing math, passing reading and passing overall percentages for THS, the correct number of students had to be calculated.  Since the ninth graders were taken out of the equation, the correct student count is the total number of students at THS minus total number of ninth graders. <b> 'ths_all_gr_count = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School"), "Student ID"].count()` <b> `ths_9th_gr_count = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "Student ID"].count()` <b> `ths_gr10to12_count = ths_all_gr_count - ths_9th_gr_count` <b> New perecentages were calculated.  The overall passing math and reading is shown below to illustrate.
+
+
+3. Using dataframes above get % from ths 10-12. replace math, reading, overall % in school summary for ths
 5. Calculate the number of THS students 10-12th
