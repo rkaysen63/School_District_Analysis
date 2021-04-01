@@ -106,5 +106,5 @@ In order to calculate the passing math, reading and overall percentages, the tot
   Finally, these new percentages had to be inserted into `school_summary_df`, replacing the ones that were there. <b>
   `new_ths_passing_math_reading_percentage = per_school_summary_df.loc["Thomas High School", "% Overall Passing"] = ths_10to12_passing_math_reading_percentage`
   
-README markdown is not fully functional!!! `code` works sometimes in the README and other times looks like a word with tick marks around it; <b> doesn't appear to work at all, but at least "<b>" not showing up in the README; *italics* does not appear to be working in the README and all instances were replaced with ""; bold print appears in the README "Summary" but no syntax to add bold print was used.
+README markdown is not fully functional!!! `code` works sometimes in the README and other times looks like a word with tick marks around it; <b> doesn't appear to work at all, but at least "<b>" not showing up in the README; Italics markdown did not work in README and all instances were replaced with ""; bold print appears in the README "Summary" but no syntax to add bold print was used.
   
