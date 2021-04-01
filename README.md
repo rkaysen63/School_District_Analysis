@@ -6,7 +6,7 @@
 
 ## Table of Contents
 * [Overview of Project](https://github.com/rkaysen63/School_District_Analysis/blob/master/README.md#overview-of-project)
-* [Resources](https://github.com/rkaysen63/School_District_Analysis/blob/master/README.md#resourcess)
+* [Resources](https://github.com/rkaysen63/School_District_Analysis/blob/master/README.md#resources)
 * [Results](https://github.com/rkaysen63/School_District_Analysis/blob/master/README.md#results)
 * [Summary](https://github.com/rkaysen63/School_District_Analysis/blob/master/README.md#summary)
 
@@ -33,13 +33,13 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   <p align="center">
   <img src="ScreenShots/District_Summary_Comparison.png" width="900">
   </p>
-  The image above shows a comparison of the *District Summary*, i.e `district_summary_df` dataframe, after Thomas High School's (THS) ninth grade math and reading scores were removed to the `district_summary_df` of the original analysis.  The effect is so small as to be considered negligible.  Only a difference of 0.1 points is seen in the Average Math Score for the district.  It is not a surprise that the removal of THS's ninth grade scores had so little impact on the overall district scores because the THS's ninth grade class of 641 students is only 1.6 % of the district's total student population of 39169.
+  The image above shows a comparison of the `district_summary_df` dataframe, after Thomas High School's (THS) ninth grade math and reading scores were removed to the `district_summary_df` of the original analysis.  The effect is so small as to be considered negligible.  Only a difference of 0.1 points is seen in the Average Math Score for the district.  It is not a surprise that the removal of THS's ninth grade scores had so little impact on the overall district scores because the THS's ninth grade class of 641 students is only 1.6 % of the district's total student population of 39,169.
 
 * ### School Summary 
   <p align="center">
   <img src="ScreenShots/School_Summary_Comparison.png" width="900">
   </p>
-  Since the *School Summary*, i.e. `per_school_summary_df`, displays the results by each school in the district, only the results of THS were affected by removing THS's ninth grade math and reading scores.  Compare the lines that are highlighted in gold.  The lower dataframe is from the original analysis.  The upper dataframe is the refactored analysis that excludes THS's ninth graders' math and reading scores. THS's average math score went down < 0.1 points and their average reading score went up < 0.1 points by removing their ninth graders' scores.  The effect is so small as to be considered negligible.
+  Since the `per_school_summary_df`, displays the results by each school in the district, only the results of THS were affected by removing THS's ninth grade math and reading scores.  Compare the lines that are highlighted in gold.  The lower dataframe is from the original analysis.  The upper dataframe is the revised analysis that excludes THS's ninth graders' math and reading scores. THS's average math score went down < 0.1 points and their average reading score went up < 0.1 points by removing their ninth graders' scores.  The effect is so small as to be considered negligible.
   
 * Because the effect of replacing the ninth graders' math and reading scores with NaN is negligible, Thomas High School's performance relative to the other schools did not change.
 
@@ -103,4 +103,9 @@ In order to calculate the passing math, reading and overall percentages, the tot
   `ths_10to12_passing_math_reading_percentage = ths_passing_math_reading_count / ths_gr10to12_count * 100` <b> 
   Finally, these new percentages had to be inserted into `school_summary_df`, replacing the ones that were there. <b>
   `new_ths_passing_math_reading_percentage = per_school_summary_df.loc["Thomas High School", "% Overall Passing"] = ths_10to12_passing_math_reading_percentage`
+  
+README markdown is not fully functional. 
+`code` works sometimes in the README and other times looks like a word with tick marks around it.
+<b> doesn't appear to work at all, but at least "<b>" not showing up in the README.
+*italics* looks like it is working inside the edit but doesn't show as italics in the README.
   
