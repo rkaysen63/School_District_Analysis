@@ -47,37 +47,37 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   <p align="center">
   <img src="ScreenShots/Top_Schools_Comparison.png" width="900">
   </p> 
-  The highest performing schools are shown above.  Since Thomas High School (THS), highlighted in gold in both dataframes, is included in the top 5, the top five schools was shown twice to demonstrate that THS's rank in the top five did not change as a result of removing its ninth grade math and reading scores from the data.
+  The highest performing schools are shown above.  Since Thomas High School (THS), highlighted in gold in both dataframes, is included in the top 5, the top five schools were shown twice to demonstrate that THS's rank in the top five did not change as a result of removing its ninth grade math and reading scores from the data.
   
 * ### Bottom Five Performing Schools
   <p align="center">
   <img src="ScreenShots/Low_Performing_Schools.png" width="900">
   </p> 
-  The lowest performing schools are shown above. This dataframe is shown only one time because Thomas High School does not fall in this category before or after removing the ninth graders' math and reading scores.
+  The lowest performing schools are shown above. This dataframe is shown only one time because it did not change after removing THS's ninth graders' math and reading scores.
   
 * ### Math and Reading Scores by Grade
   <p align="center">
   <img src="ScreenShots/Math_Read_Grade_Comparison.png" width="800">
   </p> 
-  The comparison above of the original *Math and Reading Scores by Grade* to the *Math and Reading Scores by Grade* after the THS ninth graders' math and reading scores were removed show that the ninth graders' grades appear as NaN, i.e. a null value, in the subsequent dataframe.
+  The comparison above of the original `math_scores_by_grade_df` and original `reading_scores_by_grade_df` to the `math_scores_by_grade_df` and `reading_scores_by_grade_df` after THS's ninth graders' math and reading scores were removed show that the ninth graders' scores appear as NaN, i.e. a null value, in the revised dataframes.
 
 * ### Scores by School Spending Per Capita
 * <p align="center">
   <img src="ScreenShots/Scores_by_Spending_per_Capita_Comparison.png" width="800">
   </p> 
-  The comparison above of the original *Scores by Spending Ranges (Per Student)* to the revised *Scores by Spending Ranges (Per Student)* after THS ninth graders' math and reading scores were removed shows no difference in the results.  The dataframe, `scores_by_school_spending_df`, shows that regardless of the amount spent on each student, reading averages are about the same across the spending ranges, but the math scores actually decreased slightly for schools that spent more money per student.
+  The comparison above of the original *Scores by Spending Ranges (Per Student)* to the revised *Scores by Spending Ranges (Per Student)* after THS's ninth graders' math and reading scores were removed shows no difference in the results.  The dataframe, `scores_by_school_spending_df`, shows that regardless of the amount spent on each student, reading averages are about the same across the spending ranges, but the math scores actually decreased slightly for schools that spent more money per student.
 
 * ### Scores by School Size
   <p align="center">
   <img src="ScreenShots/Scores_School_Size_Comparison.png" width="800">
   </p> 
-  The comparison above of the original *Scores by School Size* to the revised *Scores by School Size* after THS ninth grader's math and reading scores were removed show no difference in the results.  The dataframe, `scores_by_size_df`, shows that math and reading averages are about the same for small and medium schools, but the math and reading scores decreased for larger schools.
+  The comparison above of the original *Scores by School Size* to the revised *Scores by School Size* after THS's ninth graders' math and reading scores were removed show no difference in the results.  The dataframe, `scores_by_size_df`, shows that math and reading averages are about the same for small and medium schools, but the math and reading scores decreased for larger schools.
   
 * ### Scores by School Type
   <p align="center">
   <img src="ScreenShots/Scores_School_Type_Comparison.png" width="800">
   </p> 
-  The comparison above of the original *Scores by School Type* to the revised *Scores by School Type* after THS ninth grader's math and reading scores were removed show no difference in the results.  The dataframe, `scores_by_type_df`, shows that Charter Schools perform slightly better than District Schools in both math and reading.
+  The comparison above of the original *Scores by School Type* to the revised *Scores by School Type* after THS's ninth graders' math and reading scores were removed show no difference in the results.  The dataframe, `scores_by_type_df`, shows that Charter Schools perform slightly better than District Schools in both math and reading.
 
 ## Summary
 * In order to provide a fair comparison across district schools, Thomas High School's ninth grade math and reading scores were removed from the dataframe, `student_data_df`, and replaced with null, i.e. NaN. <b> 
@@ -86,7 +86,7 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   The revised `student_data_df` was merged with the `school_data_df` to form a new, "clean" `school_data_complete_df` that includes null (NaN) values for THS's ninth graders' math and reading scores.
 
 * In creating the District Summary, `district_summary_df`, the average math and reading scores are calculated from the "clean" `school_data_complete_df`, so that the mean of math and reading scores no longer include THS's ninth graders' scores because they are NaN. <b> ` average_math_score = school_data_complete_df["math_score"].mean()` <b> 
-In order to calculate the passing math, reading and overall percentages, the total student count had to be revised to exclude THS ninth graders.  The ninth grade count was obtained using the .loc method and subtracting the total student count. <b>
+In order to calculate the passing math, reading and overall percentages, the total student count had to be revised to exclude THS's ninth graders.  The ninth grade count was obtained using the .loc method and subtracting the total student count. <b>
   `ths_9th_gr_count = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "Student ID"].count()` <b>
   `student_count = school_data_complete_df["Student ID"].count()` <b>
   `student_count_wo_ths9th = student_count - ths_9th_gr_count` <b>
