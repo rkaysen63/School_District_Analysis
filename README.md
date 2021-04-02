@@ -47,7 +47,7 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   <p align="center">
   <img src="ScreenShots/Top_Schools_Comparison.png" width="900">
   </p> 
-  The highest performing schools are shown above.  Since Thomas High School (THS), highlighted in gold in both dataframes, is included in the top 5, the top five schools were shown twice to demonstrate that THS's rank in the top five did not change as a result of removing its ninth grade math and reading scores from the data.
+  The highest performing schools are shown above.  Since Thomas High School (THS), highlighted in gold in both dataframes, is included in the top 5, the top five schools are shown twice to demonstrate that THS's rank in the top five did not change as a result of removing its ninth grade math and reading scores from the data.
   
 * ### Bottom Five Performing Schools
   <p align="center">
@@ -65,24 +65,24 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   <p align="center">
   <img src="ScreenShots/Scores_by_Spending_per_Capita_Comparison.png" width="800">
   </p> 
-  The comparison above of the original "Scores by Spending Ranges (Per Student)" to the revised "Scores by Spending Ranges (Per Student)" after THS's ninth graders' math and reading scores were removed shows no difference in the results.  The dataframe, `scores_by_school_spending_df`, shows that regardless of the amount spent on each student, reading averages are about the same across the spending ranges, but the math scores actually decreased slightly for schools that spent more money per student.
+  The comparison above of the original "Scores by Spending Ranges (Per Student)" to the revised "Scores by Spending Ranges (Per Student)" after THS's ninth graders' math and reading scores were removed shows no difference in the results.  Per the results shown in "Scores by Spending Ranges (Per Student)", reading averages are about the same across regardless of the amount spent per student, whereas math scores decrease slightly for schools that spend more money per student.  Apparently there are other factors involved, that may include a more diverse population in larger schools.
 
 * ### Scores by School Size
   <p align="center">
   <img src="ScreenShots/Scores_School_Size_Comparison.png" width="800">
   </p> 
-  The comparison above of the original "Scores by School Size" to the revised "Scores by School Size" after THS's ninth graders' math and reading scores were removed show no difference in the results.  The dataframe, `scores_by_size_df`, shows that math and reading averages are about the same for small and medium schools, but the math and reading scores decreased for larger schools.
+  The comparison above of the original "Scores by School Size" to the revised "Scores by School Size" after THS's ninth graders' math and reading scores were removed show no difference in the results.  Per the results shown in "Scores by School Size", math and reading averages are about the same for small and medium schools, but the math and reading scores decrease for larger schools.
   
 * ### Scores by School Type
   <p align="center">
   <img src="ScreenShots/Scores_School_Type_Comparison.png" width="800">
   </p> 
-  The comparison above of the original "Scores by School Type" to the revised "Scores by School Type" after THS's ninth graders' math and reading scores were removed show no difference in the results.  The dataframe, `scores_by_type_df`, shows that Charter Schools perform slightly better than District Schools in both math and reading.
+  The comparison above of the original "Scores by School Type" to the revised "Scores by School Type" after THS's ninth graders' math and reading scores were removed show no difference in the results.  Per the results shown in "Scores by School Type", Charter Schools perform slightly better than District Schools in both math and reading.
 
 ## Summary
 * In order to provide a fair comparison across district schools, Thomas High School's ninth grade math and reading scores were removed from the dataframe, `student_data_df`, and replaced with null, i.e. "NaN".  The numpy dependency was imported to use `np.nan` to quickly substitute "NaN" in place of the ninth graders scores.   
-  `import numpy as np`  
-  `student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "reading_score"] = np.nan`   
+    `import numpy as np`  
+    `student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "reading_score"] = np.nan`   
   The revised `student_data_df` was merged with the `school_data_df` to form a new, "clean" `school_data_complete_df` that includes null ("NaN") values for THS's ninth graders' math and reading scores.
 
 * In creating the District Summary, `district_summary_df`, the average math and reading scores are calculated from the "clean" `school_data_complete_df`, so that the mean of math and reading scores no longer include THS's ninth graders' scores because they are "NaN".  For example:    `average_math_score = school_data_complete_df["math_score"].mean()`<br/>
