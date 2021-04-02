@@ -100,8 +100,8 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   \
   `student_count_wo_ths9th = student_count - ths_9th_gr_count` \
   \
-  Passing rates were from the "clean" `school_data_complete_df`.  The code included a statement to pull only math, or reading, or both scores from the dataframe that are greater than or equal to 70. The steps to calculate overall passing math and reading percentage is shown below to illustrate.  First, a filtered dataframe is created to include only students that scored 70 or more in both math and reading.  Then the number of students that passed both were counted.  Finally, the number of students passing both math and reading were divided by the adjusted total student count, i.e. does not include THS's ninth graders, and multiplied by 100 percent.
-  \
+  Passing rates were from the "clean" `school_data_complete_df`.  The code included a statement to pull only math, or reading, or both scores from the dataframe that are greater than or equal to 70. The steps to calculate overall passing math and reading percentage is shown below to illustrate.  First, a filtered dataframe is created to include only students that scored 70 or more in both math and reading.  Then the number of students that passed both were counted.  Finally, the number of students passing both math and reading were divided by the adjusted total student count, i.e. does not include THS's ninth graders, and multiplied by 100 percent.  
+    
   `passing_math_reading = school_data_complete_df[(school_data_complete_df["math_score"] >= 70) & (school_data_complete_df["reading_score"] >= 70)]` \
   \
   `overall_passing_math_reading_count = passing_math_reading["student_name"].count()`  
@@ -109,9 +109,10 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   `overall_passing_percentage = overall_passing_math_reading_count/float(student_count_wo_ths9th) * 100`  
 
 * The procedure for creating the School Summary, `school_summary_df` without THS's ninth graders' math and reading scores, began exactly the same as for the original analysis, but required some correction.  Before the correction, THS's passing percentages were calculated using the total school count.  Therefore, the percentages are not correct because the data sample is less the ninth grader scores.  For this reason, the total count had to be reduced by the number of ninth graders.  As before, number of Series were created using the `df.groupby()` functionto calculate the mean for budget, math and reading and filtered dataframes were created for passing math and reading scores.  Example of calculating the average budget using `groupby()`:  
+  
     `per_school_budget = school_data_complete_df.groupby()["school_name"].mean()["budget"]`  
       
-      The average math and reading scores for THS will reflect that the ninth graders' scores are "NaN".  But the percentages will not be correct because the school count was not adjusted to omit the ninth graders from the count.  In order to record the correct passing math, passing reading and passing overall percentages for THS, the correct number of students had to be calculated.  Since the ninth graders were taken out of the equation, the correct student count is the total number of students at THS minus total number of ninth graders, or in other words the number of students in grades ten through twelve.   
+     The average math and reading scores for THS will reflect that the ninth graders' scores are "NaN".  But the percentages will not be correct because the school count was not adjusted to omit the ninth graders from the count.  In order to record the correct passing math, passing reading and passing overall percentages for THS, the correct number of students had to be calculated.  Since the ninth graders were taken out of the equation, the correct student count is the total number of students at THS minus total number of ninth graders, or in other words the number of students in grades ten through twelve.   
   \
   `ths_all_gr_count = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School"), "Student ID"].count()`  
   \
