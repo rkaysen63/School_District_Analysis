@@ -80,7 +80,7 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   The comparison above of the original "Scores by School Type" to the revised "Scores by School Type" after THS's ninth graders' math and reading scores were removed show no difference in the results.  Per the results shown in "Scores by School Type", Charter Schools performed slightly better than District Schools in both math and reading.
 
 ## Summary
-* In order to provide a fair comparison across district schools, Thomas High School's ninth grade math and reading scores were removed from the dataframe, `student_data_df`, and replaced with null, i.e. "NaN".  The numpy dependency was imported in order to use `np.nan` with `.loc` to quickly substitute "NaN" in place of the ninth graders scores. `.loc` was used to locate THS and 9th grade in the dataframe.  
+* In order to provide a fair comparison across district schools, Thomas High School's ninth grade math and reading scores were removed from the dataframe, `student_data_df`, and replaced with null, i.e. "NaN".  The numpy dependency was imported in order to use `np.nan` with `.loc` to quickly substitute "NaN" in place of the ninth graders scores. `.loc[]` was used to locate "Thomas High School" and "9th" grade in the dataframe.  
      
     `import numpy as np`  
       
@@ -88,11 +88,11 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
       
   The revised `student_data_df` was merged with the `school_data_df` to form a new, "clean" `school_data_complete_df` that includes null ("NaN") values for THS's ninth graders' math and reading scores.
 
-* In creating the District Summary, `district_summary_df`, the average math and reading scores were calculated from the "clean" `school_data_complete_df`, so that the mean of math and reading scores no longer included THS's ninth graders' scores because they are "NaN".  To illustrate, district's average math score formula using the `.mean()` function is shown below.  
+* In creating the District Summary, `district_summary_df`, the average math and reading scores were calculated from the "clean" `school_data_complete_df`, so that the mean of math and reading scores no longer included THS's ninth graders' scores because they are "NaN".  To illustrate, the district's average math score formula using the `.mean()` function is shown below.  
   
   `average_math_score = school_data_complete_df["math_score"].mean()`  
     
-  In order to calculate the passing math, reading and overall percentages, the total student count had to be revised to exclude THS's ninth graders.  The ninth grade count was obtained using the .loc method and subtracting the total student count.  
+  In order to calculate the passing math, reading and overall percentages, the total student count had to be revised to exclude THS's ninth graders.  The ninth grade count was obtained by using the `.loc[].count()`to locate "Thomas High School" and "9th" and count the number of students that meet both criteria in the dataframe.  Then the ninth grade count was subtracted from THS's total student count.  
     
   `ths_9th_gr_count = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "Student ID"].count()`  
   \
