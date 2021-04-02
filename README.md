@@ -80,7 +80,7 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   The comparison above of the original "Scores by School Type" to the revised "Scores by School Type" after THS's ninth graders' math and reading scores were removed show no difference in the results.  Per the results shown in "Scores by School Type", Charter Schools performed slightly better than District Schools in both math and reading.
 
 ## Summary
-* In order to provide a fair comparison across district schools, Thomas High School's ninth grade math and reading scores were removed from the dataframe, `student_data_df`, and replaced with null, i.e. "NaN".  The numpy dependency was imported in order to use `np.nan` with `.loc` to quickly substitute "NaN" in place of the ninth graders scores. `.loc[]` was used to locate "Thomas High School" and "9th" grade in the dataframe.  
+* In order to provide a fair comparison across district schools, Thomas High School's ninth grade math and reading scores were removed from the dataframe, `student_data_df`, and replaced with null, i.e. "NaN".  The numpy dependency was imported in order to use `np.nan` to quickly substitute "NaN" in place of the ninth graders scores. `.loc[]` was used to locate "Thomas High School" and "9th" grade in the dataframe.  
      
     `import numpy as np`  
       
@@ -100,7 +100,7 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   \
   `student_count_wo_ths9th = student_count - ths_9th_gr_count` \
   \
-  Passing rates were from the "clean" `school_data_complete_df`.  The code included a statement to pull only math, or reading, or both scores from the dataframe that are greater than or equal to 70. The steps to calculate overall passing math and reading percentage is shown below to illustrate.  
+  Passing rates were from the "clean" `school_data_complete_df`.  The code included a statement to pull only math, or reading, or both scores from the dataframe that are greater than or equal to 70. The steps to calculate overall passing math and reading percentage is shown below to illustrate.  First, a filtered dataframe is created to include only students that scored 70 or more in both math and reading.  Then the number of students that passed both were counted.  Finally, the number of students passing both math and reading were divided by the adjusted total student count, i.e. does not include THS's ninth graders, and multiplied by 100 percent.
   \
   `passing_math_reading = school_data_complete_df[(school_data_complete_df["math_score"] >= 70) & (school_data_complete_df["reading_score"] >= 70)]` \
   \
