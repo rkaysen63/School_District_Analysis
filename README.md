@@ -84,7 +84,7 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
      
     `import numpy as np`  
       
-      `student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "reading_score"] = np.nan`  
+    `student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "reading_score"] = np.nan`  
       
   The revised `student_data_df` was merged with the `school_data_df` to form a new, "clean" `school_data_complete_df` that includes null ("NaN") values for THS's ninth graders' math and reading scores.
 
@@ -108,7 +108,7 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   \
   `overall_passing_percentage = overall_passing_math_reading_count/float(student_count_wo_ths9th) * 100`  
 
-* The procedure for creating the School Summary, `school_summary_df` without THS's ninth graders' math and reading scores, began exactly the same as for the original analysis, but required some correction.  Before the correction, THS's passing percentages were calculated using the total school count.  Therefore, the percentages are not correct because the data sample is less the ninth grader scores.  For this reason, the total count had to be reduced by the number of ninth graders.  As before, number of Series were created using the `df.groupby()` functionto calculate the mean for budget, math and reading and filtered dataframes were created for passing math and reading scores.  Example of calculating the average budget using `groupby()`:  
+* The procedure for creating the School Summary, `school_summary_df` without THS's ninth graders' math and reading scores, began exactly the same as for the original analysis, but required some correction.  Before the correction, THS's passing percentages were calculated using the total school count.  Therefore, the percentages are not correct because the data sample is less the ninth graders' scores.  For this reason, the total count had to be reduced by the number of ninth graders.  As before, several Series were created using the `df.groupby()` functionto calculate the mean for budget, math and reading and filtered dataframes were created for passing math and reading scores.  Then the Series were combined into the School Summary data frame.  Example of calculating the average budget using `groupby()`:  
   
     `per_school_budget = school_data_complete_df.groupby()["school_name"].mean()["budget"]`  
       
@@ -130,4 +130,4 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   \
   `new_ths_passing_math_reading_percentage = per_school_summary_df.loc["Thomas High School", "% Overall Passing"] = ths_10to12_passing_math_reading_percentage` 
     
-The remaining code to obtain determine high and low performing schools, math and reading scores by grade, scores by school spending per capita, scores by school size and scores by school type was the same as it was in the original analysis.
+The remaining code to obtain determine high and low performing schools, math and reading scores by grade, scores by school spending per capita, scores by school size, and scores by school type were the same as in the original analysis.
