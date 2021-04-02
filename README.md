@@ -130,4 +130,4 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   \
   `new_ths_passing_math_reading_percentage = per_school_summary_df.loc["Thomas High School", "% Overall Passing"] = ths_10to12_passing_math_reading_percentage` 
     
-The remaining code to obtain determine high and low performing schools, math and reading scores by grade, scores by school spending per capita, scores by school size, and scores by school type were the same as in the original analysis.
+The remaining code to determine high and low performing schools, math and reading scores by grade, scores by school spending per capita, scores by school size, and scores by school type were the same as in the original analysis.
