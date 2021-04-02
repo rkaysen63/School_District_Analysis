@@ -109,10 +109,9 @@ Python through Jupyter Notebook interface was used to pull in and analyze data f
   `overall_passing_percentage = overall_passing_math_reading_count/float(student_count_wo_ths9th) * 100`  
 
 * The procedure for creating the School Summary, `school_summary_df` without THS's ninth graders' math and reading scores, began exactly the same as for the original analysis, but required some correction.  Before the correction, THS's passing percentages were calculated using the total school count.  Therefore, the percentages are not correct because the data sample is less the ninth grader scores.  For this reason, the total count had to be reduced by the number of ninth graders.  As before, number of Series were created using the `df.groupby()` functionto calculate the mean for budget, math and reading and filtered dataframes were created for passing math and reading scores.  Example of calculating the average budget using `groupby()`:  
-  
-`per_school_budget = school_data_complete_df.groupby()["school_name"].mean()["budget"]`   
-\
-  The average math and reading scores for THS will reflect that the ninth graders' scores are "NaN".  But the percentages will not be correct because the school count was not adjusted to omit the ninth graders from the count.  In order to record the correct passing math, passing reading and passing overall percentages for THS, the correct number of students had to be calculated.  Since the ninth graders were taken out of the equation, the correct student count is the total number of students at THS minus total number of ninth graders, or in other words the number of students in grades ten through twelve.   
+    `per_school_budget = school_data_complete_df.groupby()["school_name"].mean()["budget"]`  
+      
+      The average math and reading scores for THS will reflect that the ninth graders' scores are "NaN".  But the percentages will not be correct because the school count was not adjusted to omit the ninth graders from the count.  In order to record the correct passing math, passing reading and passing overall percentages for THS, the correct number of students had to be calculated.  Since the ninth graders were taken out of the equation, the correct student count is the total number of students at THS minus total number of ninth graders, or in other words the number of students in grades ten through twelve.   
   \
   `ths_all_gr_count = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School"), "Student ID"].count()`  
   \
